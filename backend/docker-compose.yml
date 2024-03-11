@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+
+  nginx:
+    container_name: nginx
+    image: junwon1131/s10c102-nginx:${TAG}
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    networks:
+      - jenkins-network
+    volumes:
+      - /policy:/usr/share/nginx/html
+    depends_on:
+      - back
+
+
+  back:
+    container_name: back
+    image: junwon1131/s10c102-back:${TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    networks:
+      - jenkins-network
+    environment:
+      - USE_PROFILE=prod
+      - SPRING_PROFILES_ACTIVE=prod
+
+
+
+networks:
+  jenkins-network:
+    external: true
