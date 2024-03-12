@@ -16,7 +16,7 @@ services:
 
   back:
     container_name: back
-    image: junwon1131/s10c102-back:${TAG}
+    image: junwon1131/s10c102-back:latest
     build:
       context: .
       dockerfile: Dockerfile
