@@ -19,3 +19,12 @@ spring:
     refresh: youforgetthisyoualwaysfeelfailevenifyouwillgeteverythingrememberyourinnervoice
     accesstime: 86400000 # 24H
     refreshtime: 604800000 # 7Days
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web:
+          FilterChainProxy: DEBUG
