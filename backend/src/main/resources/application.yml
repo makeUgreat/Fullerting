@@ -15,7 +15,16 @@ spring:
       password: 1234
 
   jwt:
-    access: whatwehavetowantinalifeismentalsatisfactionnotmaterialoneeverydayeverytimedontbeforgetthis
-    refresh: youforgetthisyoualwaysfeelfailevenifyouwillgeteverythingrememberyourinnervoice
-    accesstime: 86400000 # 24H
+    access: whatwehavetowantinalifeismentalsatisfactionnotmaterialone
+    refresh: youforgetthisyoualwaysfeelfailevenifyouwillgeteverything
+    accesstime: 3600000  # 1H
     refreshtime: 604800000 # 7Days
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web:
+          FilterChainProxy: DEBUG
