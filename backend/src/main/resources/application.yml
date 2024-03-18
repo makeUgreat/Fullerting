@@ -20,11 +20,30 @@ spring:
     accesstime: 3600000  # 1H
     refreshtime: 604800000 # 7Days
 
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 110MB
+
+
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAW3MEAWFWGVMIB3VX
+      secret-key: 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
+    region:
+      static: ap-northeast-2
+    s3:
+      bucket: fullerting-s3-v2
+      stack:
+        auto: false
+
 
 logging:
   level:
     org:
       springframework:
         security:
-          web:
+          web: DEBUG
           FilterChainProxy: DEBUG
+
