@@ -7,7 +7,7 @@ spring:
   data:
     redis:
       host: j10C102.p.ssafy.io
-      port: 6379
+      port: 6379 
 
   security:
     user:
