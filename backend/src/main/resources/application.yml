@@ -43,6 +43,10 @@ cloud:
       stack:
         auto: false
 
+springdoc:
+  swagger-ui:
+    path: /api/swagger-ui.html
+
 
 logging:
   level:
