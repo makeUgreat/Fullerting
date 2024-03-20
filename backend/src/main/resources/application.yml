@@ -26,7 +26,7 @@ spring:
       max-request-size: 110MB
 
   jpa:
-    show-sql: true
+    show-sql: false  # jpa 쿼리문 출력 설정
     properties:
       hibernate:
         format_sql: true
@@ -56,7 +56,7 @@ logging:
           web:
           FilterChainProxy: DEBUG
 
-      hibernate:
-        type:
-          descriptor:
-            sql: trace
+#      hibernate:
+#        type:
+#          descriptor:
+#            sql: trace
