@@ -67,4 +67,4 @@ server:
   servlet:
     context-path: /
   websocket:
-    port: 8181
+    port: 9090
