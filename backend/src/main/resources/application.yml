@@ -56,6 +56,12 @@ logging:
           web:
           FilterChainProxy: DEBUG
 
+
+fcm:
+  service-account-file: key/fullerting-fcm-firebase-adminsdk-rjmjj-0e19a90e90.json
+  topic-name: alarm
+  project-id: fullerting-fcm
+
 #      hibernate:
 #        type:
 #          descriptor:
