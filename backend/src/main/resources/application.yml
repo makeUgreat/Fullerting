@@ -60,3 +60,11 @@ logging:
 #        type:
 #          descriptor:
 #            sql: trace
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  websocket:
+    port: 8181
