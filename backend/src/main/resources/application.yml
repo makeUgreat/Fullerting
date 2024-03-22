@@ -75,3 +75,11 @@ fcm:
 #        type:
 #          descriptor:
 #            sql: trace
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  websocket:
+    port: 9090
