@@ -177,7 +177,7 @@ const WriteBox = styled.img`
 `;
 
 const Post = () => {
-  const [favorite, setFavorite] = useState<string>("");
+  // const [favorite, setFavorite] = useState<string>("");
   const navigate = useNavigate();
   const handelWriteClick = () => {
     navigate("/trade/post");

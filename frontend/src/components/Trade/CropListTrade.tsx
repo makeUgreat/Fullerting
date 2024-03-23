@@ -6,7 +6,7 @@ import { cropAtom } from "../../stores/diary";
 import { useAtom } from "jotai";
 import CropProfile from "../diary/CropProfile";
 interface CropListTradeProps {
-  onDiarySelect: (diaryId: number) => void;
+  onDiarySelect: (diaryId: string) => void;
 }
 const CardListBox = styled.div`
   display: flex;
@@ -63,8 +63,8 @@ const CropListTrade: React.FC<CropListTradeProps> = ({ onDiarySelect }) => {
 
   const handleCardClick = (cropData: CropType) => {
     navigate(`/trade/post`);
-    onDiarySelect(cropData.packDiaryId);
-    console.log(cropData);
+    onDiarySelect(cropData.packDiaryId.toString());
+    console.log("다이어리 id", cropData.packDiaryId.toString());
   };
 
   return (

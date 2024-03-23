@@ -6,7 +6,7 @@ import { selectedDiaryIdAtom } from "../../stores/trade";
 
 interface SelectModalProps {
   closeModal: () => void;
-  onDiarySelect: (diaryId: number) => void; // 선택된 다이어리 ID 처리 함수
+  onDiarySelect: (diaryId: string) => void; // 선택된 다이어리 ID 처리 함수
 }
 const Modal = styled.div`
   width: 100%;

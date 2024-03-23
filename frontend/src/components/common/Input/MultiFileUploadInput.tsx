@@ -85,21 +85,54 @@ const MultiFileUploadInput: React.FC = () => {
   const [selectedFiles, setSelectedFiles] = useAtom(imageFilesAtom);
   const [previewURLs, setPreviewURLs] = useState<string[]>([]);
 
+  // const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+  //   const files = e.target.files ? Array.from(e.target.files) : [];
+  //   setSelectedFiles((prevFiles) => [...prevFiles, ...files]);
+
+  //   const newPreviewURLs = files.map((file) => {
+  //     const reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     return new Promise<string>((resolve) => {
+  //       reader.onload = () => resolve(reader.result as string);
+  //     });
+  //   });
+
+  //   Promise.all(newPreviewURLs).then((urls) => {
+  //     setPreviewURLs((prevURLs) => [...prevURLs, ...urls]);
+  //   });
+  // };
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files ? Array.from(e.target.files) : [];
-    setSelectedFiles((prevFiles) => [...prevFiles, ...files]);
+    if (e.target.files) {
+      const newFiles = Array.from(e.target.files);
+      // 기존 파일과 새 파일을 모두 포함하는 새 배열 생성
+      const combinedFiles = [...selectedFiles, ...newFiles];
 
-    const newPreviewURLs = files.map((file) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      return new Promise<string>((resolve) => {
-        reader.onload = () => resolve(reader.result as string);
-      });
-    });
+      // 중복을 제거하기 위해 파일명과 크기를 기준으로 고유한 파일만 포함하는 배열 생성
+      const uniqueFiles = combinedFiles.reduce((acc: File[], current: File) => {
+        if (
+          !acc.some(
+            (file) => file.name === current.name && file.size === current.size
+          )
+        ) {
+          acc.push(current);
+        }
+        return acc;
+      }, [] as File[]); // 빈 배열을 File[] 타입으로 명시합니다.
 
-    Promise.all(newPreviewURLs).then((urls) => {
-      setPreviewURLs((prevURLs) => [...prevURLs, ...urls]);
-    });
+      // 중복 제거된 파일 배열을 상태에 저장
+      setSelectedFiles(uniqueFiles);
+
+      // 중복 제거된 파일 배열을 기반으로 미리보기 URL 생성
+      const newPreviewURLs = uniqueFiles.map((file) =>
+        URL.createObjectURL(file)
+      );
+
+      // 기존 미리보기 URL들을 해제
+      previewURLs.forEach((url) => URL.revokeObjectURL(url));
+
+      // 새로운 미리보기 URL 배열을 상태에 저장
+      setPreviewURLs(newPreviewURLs);
+    }
   };
 
   const handleDeleteImage = (index: number) => {

@@ -10,7 +10,7 @@ interface LikeData {
 interface PostData {
   exArticleTitle: string;
   exArticleContent: string;
-  imgFiles: File[];
+  exArticlePlace: string;
   ex_article_location: string;
   exArticleType: string;
   packdiaryid: string;
@@ -49,7 +49,7 @@ export const useLike = () => {
       console.log(res);
     },
     onError: (error) => {
-      console.log(error);
+      console.log("에러에러", error);
     },
   });
 };
@@ -111,6 +111,7 @@ export const useLike = () => {
 // };
 export const usePost = () => {
   return useMutation({
+    // mutationKey: ["lst"],
     mutationFn: async (formData: FormData) => {
       const accessToken = sessionStorage.getItem("accessToken");
       if (!accessToken) {
@@ -121,11 +122,12 @@ export const usePost = () => {
       const response = await api.post("/exchanges", formData, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "multipart/form-data",
           // 'Content-Type': 'multipart/form-data'는 FormData를 사용할 때 자동으로 설정됩니다.
         },
       });
 
-      return response.data;
+      return response;
     },
     onSuccess: (res) => {
       console.log("업로드 성공:", res);

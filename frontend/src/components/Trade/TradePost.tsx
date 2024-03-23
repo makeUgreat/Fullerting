@@ -118,7 +118,7 @@ const TradePost = () => {
   const [cash, setCash] = useInput("");
   const [place, setPlace] = useInput("");
   const [content, setContent] = useInput("");
-  const [tradeType, setTradeType] = useState("");
+  const [tradeType, setTradeType] = useState<string>("");
   const [diary, setSelectedDiaryId] = useAtom(selectedDiaryIdAtom);
 
   const handleRadioClick = (index: number) => {
@@ -128,7 +128,7 @@ const TradePost = () => {
   const handleCashClick = () => {
     setCashCheck(!cashCheck);
   };
-  const handleDiarySelect = (diaryId: number) => {
+  const handleDiarySelect = (diaryId: string) => {
     setSelectedDiaryId(diaryId);
     setModal(false); // 모달 닫기
   };
@@ -154,8 +154,14 @@ const TradePost = () => {
     { title: "일반 거래", value: "GENERAL_TRANSACTION" },
     { title: "나눔", value: "SHARING" },
   ];
-
-  const [selectedFiles] = useAtom(imageFilesAtom);
+  //
+  // const { mutate: performLogout } = useMutation({
+  //   mutationFn: logoutUser,
+  //   onSuccess: () => {
+  //     console.log("로그아웃 성공 로그아웃 성공");
+  //     navigate("/");
+  //   },
+  //
   const { mutate: handlePost } = usePost();
   const navigate = useNavigate();
   //   const handleCheckClick = () => {
@@ -177,36 +183,96 @@ const TradePost = () => {
   //     // 요청 후 페이지 이동
   //     navigate("/trade");
   //   };
+  const [selectedFiles] = useAtom(imageFilesAtom);
   const handleCheckClick = async () => {
     const formData = new FormData();
+    console.log("내가 배열이에요", selectedFiles);
 
-    // selectedFiles는 File 타입의 배열입니다. 각 파일을 formData에 추가합니다.
+    // 이미지 파일 추가
+    selectedFiles.forEach((file) => {
+      formData.append("file", file);
+    });
+
+    // const [array, setArray] = useState<object>([]);
+    // type FileArray = File[];
+
+    // Initialize an empty array to store the files
+    // let appendedFiles: FileArray = [];
+
     // selectedFiles.forEach((file) => {
     //   formData.append("file", file);
     // });
-
-    // 나머지 필요한 정보를 formData에 추가합니다.
+    // selectedFiles.forEach((file) => {
+    // appendedFiles.push(file)
+    // });
+    // formData.append('file',appendedFiles)
+    // 텍스트 데이터 추가
+    // exArticleRegisterRequest 키에 JSON 형태의 문자열 값을 할당합니다.
     const exArticleRegisterRequest = JSON.stringify({
       exArticleTitle: title,
       exArticleContent: content,
-      ex_article_location: place,
+      exArticlePlace: place,
       exArticleType: tradeType,
-      packdiaryid: diary,
+      ex_article_location: place, // 필요한 경우 서버에서 요구하는 추가 데이터를 여기에 포함시킵니다.
+      packdiaryid: diary ? diary : "null", // diary가 null인 경우 문자열 "null"을 사용합니다.
       deal_cur_price: cash,
     });
-
+    // const jsonBlob = new Blob([JSON.stringify(exArticleRegisterRequest)], {
+    //   type: "application/json",
+    // });
     formData.append("exArticleRegisterRequest", exArticleRegisterRequest);
-    try {
-      for (var entries of formData) console.log(entries);
-      await handlePost(formData);
+    console.log("제발 좀 가라", exArticleRegisterRequest);
+    for (let value of formData.values()) {
+      console.log("밸류밸류", value);
+    }
+    for (let key of formData.keys()) {
+      console.log("키키키", key);
+    }
 
-      // 요청 성공 후 페이지 이동 또는 상태 업데이트
+    try {
+      handlePost(formData); // handlePost는 FormData 객체를 인자로 받는 함수여야 합니다.
+      for (var entries of formData) console.log("여기여기", entries);
       navigate("/trade");
     } catch (error) {
-      // 오류 처리
       console.error("업로드 실패:", error);
     }
   };
+
+  // const handleCheckClick = async () => {
+  //   const formData = new FormData();
+
+  // selectedFiles는 File 타입의 배열입니다. 각 파일을 formData에 추가합니다.
+  // selectedFiles.forEach((file) => {
+  //   formData.append("file", file);
+  // });
+
+  // 나머지 필요한 정보를 formData에 추가합니다.
+  //   const exArticleRegisterRequest = JSON.stringify({
+  //     exArticleTitle: title,
+  //     exArticleContent: content,
+  //     exArticlePlace: place,
+  //     ex_article_location: place,
+  //     exArticleType: tradeType,
+  //     packdiaryid: diary?.toString,
+  //     deal_cur_price: cash,
+  //   });
+  //   selectedFiles.forEach(function (image) {
+  //     formData.append("file", image);
+  //   });
+  //   formData.append("exArticleRegisterRequest", exArticleRegisterRequest);
+
+  //   try {
+  //     // for (var entries of formData) console.log(entries);
+  //     // console.log(selectedFiles);
+  //     await handlePost(formData);
+
+  //     // 요청 성공 후 페이지 이동 또는 상태 업데이트
+  //     navigate("/trade");
+  //   } catch (error) {
+  //     // 오류 처리
+  //     console.error("업로드 실패:", error);
+  //   }
+  // };
   return (
     <>
       {modal && (
