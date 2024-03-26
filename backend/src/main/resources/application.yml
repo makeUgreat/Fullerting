@@ -18,7 +18,7 @@ spring:
             client-secret: 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
             redirect-uri: https://j10c102.p.ssafy.io/login/oauth2/code/google
 #            redirect-uri: http://localhost:8080/login/oauth2/code/google
-            scope: profile, email.
+            scope: profile, email
 
 
 
