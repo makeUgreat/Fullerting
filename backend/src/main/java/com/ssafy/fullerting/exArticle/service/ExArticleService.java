@@ -97,6 +97,7 @@ public class ExArticleService {
     }
 
 
+
     public Long register(ExArticleRegisterRequest exArticleRegisterRequest, String email1, List<MultipartFile> files) {
 //        public Long register(ExArticleRegisterRequest exArticleRegisterRequest, String email1) {
 
