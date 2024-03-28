@@ -15,6 +15,7 @@ public class ArticleResponse {
     private String content;
 
 
+
     private ArticleType type;
     private int love;
 
