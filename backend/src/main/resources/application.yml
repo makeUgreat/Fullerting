@@ -1,8 +1,10 @@
 spring:
   datasource:
-    url: jdbc:mysql://j10C102.p.ssafy.io:3306/fullerting
+    url: jdbc:mysql://j10C102.p.ssafy.io:3306/fullerting?serverTimezone=Asia/Seoul
     username: fulldba
     password: full202403110344
+  jackson:
+    time-zone: Asia/Seoul
 
   data:
     redis:
