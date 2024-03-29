@@ -38,7 +38,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-    open-in-view: false # SSE 설정시 필요 -> DB Connection 닫아서 connection 고갈 방지
+    open-in-view: true  # SSE 설정시 필요 -> DB Connection 닫아서 connection 고갈 방지
 
 
 cloud:
