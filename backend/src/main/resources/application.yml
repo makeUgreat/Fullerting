@@ -27,7 +27,7 @@ spring:
   jwt:
     access: whatwehavetowantinalifeismentalsatisfactionnotmaterialone
     refresh: youforgetthisyoualwaysfeelfailevenifyouwillgeteverything
-    accesstime: 36000000  # 1H -> 0하나 더 붙임...
+    accesstime: 36000000  # 10H -> 0하나 더 붙임...
     refreshtime: 604800000 # 7Days
 
   servlet:
