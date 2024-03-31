@@ -27,7 +27,7 @@ spring:
   jwt:
     access: whatwehavetowantinalifeismentalsatisfactionnotmaterialone
     refresh: youforgetthisyoualwaysfeelfailevenifyouwillgeteverything
-    accesstime: 36000000  # 1H -> 0하나 더 붙임...
+    accesstime: 360000000  # 10H -> 0하나 더 붙임...
     refreshtime: 604800000 # 7Days
 
   servlet:
@@ -40,7 +40,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-    open-in-view: true  # SSE 설정시 필요 -> DB Connection 닫아서 connection 고갈 방지
+    open-in-view: false  # SSE 설정시 필요 -> DB Connection 닫아서 connection 고갈 방지
 
 
 cloud:
