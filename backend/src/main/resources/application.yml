@@ -86,6 +86,3 @@ server:
     context-path: /
   websocket:
     port: 9090
-
-api:
-  key: df72b411edc09ff1297ba7a6eb49c69b1df989d598c43f69444ecd650217cbaa
