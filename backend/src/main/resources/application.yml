@@ -86,6 +86,7 @@ server:
     context-path: /
   websocket:
     port: 9090
-  tomcat:
-    remoteip:
-      protocol-header: x-forwarded-proto
+
+#  tomcat:
+#    remoteip:
+#      protocol-header: x-forwarded-proto
