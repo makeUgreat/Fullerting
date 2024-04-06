@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Fullerting.iml" filepath="$PROJECT_DIR$/.idea/Fullerting.iml" />
-    </modules>
+    <module fileurl="file://$PROJECT_DIR$/.idea/modules/fullerting.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fullerting.main.iml" />
   </component>
 </project>
