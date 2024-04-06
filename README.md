@@ -27,24 +27,23 @@
 ### 작물거래
 
 **1. 동네인증**
-
+<div>
 <img src="./img/trade/현재위치.jpg"  width="200" height="420"/>
-
 <img src="./img/trade/주소인증.jpg"  width="200" height="420"/>
-
+</div>
 현재위치와 주소 검색으로 동네 인증을 합니다.
 
 **2. 작물거래**
-
+<div>
 <img src="./img/trade/거래.jpg"  width="200" height="420"/>
-
 <img src="./img/trade/작물거래생성.jpg"  width="200" height="420"/>
+</div>
 
 **3. 제안하기**
-
+<div>
 <img src="./img/trade/거래제안목록.jpg"  width="200" height="420"/>
-
 <img src="./img/trade/거래제안.jpg"  width="200" height="420"/>
+</div>
 
 구매자는 가격을 제안할 수 있고, 판매자는 제안 중 하나를 골라 채팅하고 작물을 판매할 수 있습니다.
 
@@ -53,22 +52,25 @@
 판매자는 가격을 설정해 판매하고 구매자가 작물을 구매할 수 있습니다.
 
 **5. 채팅**
-
+<div>
 <img src="./img/trade/채팅목록.jpg"  width="200" height="420"/>
-
 <img src="./img/trade/채팅.jpg"  width="200" height="420"/>
+</div>
 
 채팅을 통해 거래를 이어나갈 수 있습니다. 거래 종료 버튼을 누르면 거래를 종료할 수 있습니다.
 
 ### 작물일지
 
 **1. 작물일지**
+<div>
 
 <img src="./img/diary/작물일지.jpg"  width="200" height="420"/>
 
 <img src="./img/diary/작물일지생성.jpg"  width="200" height="420"/>
+</div>
 
 **2. 작물일기**
+<div>
 
 <img src="./img/diary/작물일기.jpg"  width="200" height="420"/>
 
@@ -79,6 +81,7 @@
 <img src="./img/diary/작물일기생성.jpg"  width="200" height="420"/>
 
 <img src="./img/diary/작물일지수정.jpg"  width="200" height="420"/>
+</div>
 
 다이어리와 물주기를 작성할 수 있고, 작물 종류 별로 작물꿀팁을 볼 수 있습니다.
 
@@ -87,16 +90,19 @@
 작물을 카메라로 인식하면 작물의 종류와 생육단계를 알려주고 작물 일지를 업그레이드 할 수 있습니다. 마지막 단계인 경우 뱃지를 획득할 수 있습니다.
 
 **4. 수확하기**
+<div>
 
 <img src="./img/diary/작물일지수확.jpg"  width="200" height="420"/>
 
 <img src="./img/diary/작물일기수확2.jpg"  width="200" height="420"/>
+</div>
 
 수확하기 버튼을 클릭해 작물을 수확할 수 있고, 수확하면 수확 표시와 함께 작물 재배 기간이 표시됩니다.
 
 ### 커뮤니티
 
 **1. 커뮤니티**
+<div>
 
 <img src="./img/community/커뮤니티.jpg"  width="200" height="420"/>
 
@@ -105,16 +111,19 @@
 <img src="./img/community/커뮤니티댓글.jpg"  width="200" height="420"/>
 
 <img src="./img/community/커뮤니티생성.jpg"  width="200" height="420"/>
+</div>
 
 자유게시판, 작물소개, 꿀팁공유, 텃밭요리 카테고리를 선택하여 게시물을 작성할 수 있습니다.
 
 ### 텃밭정보
 
 **1. 텃밭 지도**
+<div>
 
 <img src="./img/farm/텃밭지도.jpg"  width="200" height="420"/>
 
 <img src="./img/farm/텃밭상세.jpg"  width="200" height="420"/>
+</div>
 
 카카오 지도를 이용해 지역 별 텃밭 정보를 제공해줍니다.
 
@@ -133,12 +142,14 @@
 작물인식으로 얻은 뱃지를 볼 수 있습니다.
 
 **3. 내 게시글**
+<div>
 
 <img src="./img/mypage/나의제안목록.jpg"  width="200" height="420"/>
 
 <img src="./img/mypage/관심게시물.jpg"  width="200" height="420"/>
 
 <img src="./img/mypage/거래완료게시글.jpg"  width="200" height="420"/>
+</div>
 
 나의 제안 목록, 관심 게시글, 거래 완료 게시글을 볼 수 있습니다.
 
