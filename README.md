@@ -15,6 +15,7 @@
 
 ### 메인화면
 <div>
+<img src="./img/gif/메인gif.gif"  width="200" height="420"/>
 <img src="./img/main/메인화면.jpg"  width="200" height="420"/>
 <img src="./img/main/푸쉬알람.JPG"  width="200" height="420"/>
 <img src="./img/main/알림함.JPG"  width="200" height="420"/>
@@ -28,6 +29,7 @@
 
 **1. 동네인증**
 <div>
+<img src="./img/gif/위치등록gif.gif"  width="200" height="420"/>
 <img src="./img/trade/현재위치.jpg"  width="200" height="420"/>
 <img src="./img/trade/주소인증.jpg"  width="200" height="420"/>
 </div>
@@ -35,12 +37,16 @@
 
 **2. 작물거래**
 <div>
+<img src="./img/gif/작물거래등록gif.gif"  width="200" height="420"/>
 <img src="./img/trade/거래.jpg"  width="200" height="420"/>
 <img src="./img/trade/작물거래생성.jpg"  width="200" height="420"/>
 </div>
 
 **3. 제안하기**
 <div>
+<img src="./img/gif/구매자제안gif.gif"  width="200" height="420"/>
+<img src="./img/gif/제안2gif.gif"  width="200" height="420"/>
+<img src="./img/gif/판매자가제안선택gif.gif"  width="200" height="420"/>
 <img src="./img/trade/거래제안목록.jpg"  width="200" height="420"/>
 <img src="./img/trade/거래제안.jpg"  width="200" height="420"/>
 </div>
@@ -61,11 +67,11 @@
 채팅을 통해 거래를 이어나갈 수 있습니다. 거래 종료 버튼을 누르면 거래를 종료할 수 있습니다.
 
 ### 작물일지
+<img src="./img/gif/작물일지+일기 작성.gif"  width="200" height="420"/>
+
 **1. 작물일지**
 <div>
-
 <img src="./img/diary/작물일지.jpg"  width="200" height="420"/>
-
 <img src="./img/diary/작물일지생성.jpg"  width="200" height="420"/>
 </div>
 
@@ -121,7 +127,7 @@
 
 **1. 텃밭 지도**
 <div>
-
+<img src="./img/gif/텃밭조회gif.gif"  width="200" height="420"/>
 <img src="./img/farm/텃밭지도.jpg"  width="200" height="420"/>
 
 <img src="./img/farm/텃밭상세.jpg"  width="200" height="420"/>
@@ -130,9 +136,10 @@
 카카오 지도를 이용해 지역 별 텃밭 정보를 제공해줍니다.
 
 ### 마이페이지
+<img src="./img/gif/mypage_gif.gif"  width="200" height="420"/>
 
 **1. 프로필 정보**
-
+<br>
 <img src="./img/mypage/프로필.jpg"  width="200" height="420"/>
 
 계정에서 프로필과 닉네임을 수정할 수 있습니다.
